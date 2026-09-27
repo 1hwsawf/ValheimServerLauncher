@@ -1,0 +1,136 @@
+<Window x:Class="ValheimServerLauncher.LaunchArgumentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="英灵神殿服务器设置" Width="900" Height="760" MinWidth="760" MinHeight="620"
+        WindowStartupLocation="CenterOwner" Background="{StaticResource WindowBrush}">
+  <Grid Margin="18">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                  Padding="0,0,8,0">
+      <StackPanel>
+        <TextBlock Text="英灵神殿服务器设置" Style="{StaticResource PanelHeader}"/>
+        <TextBlock Text="服务器设置会自动生成到启动命令中。" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,14"/>
+
+        <Border Style="{StaticResource Section}">
+          <StackPanel>
+            <TextBlock Text="服务器基本信息" Style="{StaticResource PanelHeader}"/>
+            <Grid>
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="服务器名称（-name）" Style="{StaticResource Caption}"/>
+                <TextBox x:Name="ServerNameBox"/>
+                <TextBlock Text="世界名称（-world）" Style="{StaticResource Caption}"/>
+                <TextBox x:Name="WorldNameBox"/>
+              </StackPanel>
+              <StackPanel Grid.Column="1">
+                <TextBlock Text="服务器密码（-password，至少 5 位）" Style="{StaticResource Caption}"/>
+                <PasswordBox x:Name="PasswordBox" Style="{StaticResource PasswordField}"/>
+                <Grid Margin="0,0,0,8">
+                  <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                  <StackPanel Grid.Column="0" Margin="0,0,8,0">
+                    <TextBlock Text="游戏端口（-port）" Style="{StaticResource Caption}"/>
+                    <TextBox x:Name="PortBox" Style="{StaticResource NumericField}"/>
+                  </StackPanel>
+                  <StackPanel Grid.Column="1">
+                    <TextBlock Text="最大玩家数" Style="{StaticResource Caption}"/>
+                    <TextBox x:Name="MaxPlayersBox" Style="{StaticResource NumericField}"/>
+                  </StackPanel>
+                </Grid>
+              </StackPanel>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+              <CheckBox x:Name="PublicBox" Content="公开服务器（-public）" Margin="0,4,24,8"/>
+              <CheckBox x:Name="CrossplayBox" Content="启用跨平台联机（-crossplay）" Margin="0,4,0,8"/>
+            </StackPanel>
+          </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Section}">
+          <StackPanel>
+            <TextBlock Text="路径与实例" Style="{StaticResource PanelHeader}"/>
+            <Grid>
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="存档目录（-savedir）" Style="{StaticResource Caption}"/>
+                <TextBox x:Name="SaveDirectoryBox" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto"/>
+                <TextBlock Text="实例 ID（-instanceid，可选）" Style="{StaticResource Caption}"/>
+                <TextBox x:Name="InstanceIdBox" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto"/>
+              </StackPanel>
+              <StackPanel Grid.Column="1">
+                <TextBlock Text="日志文件（-logFile）" Style="{StaticResource Caption}"/>
+                <TextBox x:Name="LogFilePathBox" TextWrapping="NoWrap" HorizontalScrollBarVisibility="Auto"/>
+              </StackPanel>
+            </Grid>
+          </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Section}">
+          <StackPanel>
+            <TextBlock Text="保存与备份" Style="{StaticResource PanelHeader}"/>
+            <Grid>
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0" Margin="0,0,8,0"><TextBlock Text="保存间隔（秒）" Style="{StaticResource Caption}"/><TextBox x:Name="SaveIntervalBox" Style="{StaticResource NumericField}"/></StackPanel>
+              <StackPanel Grid.Column="1" Margin="0,0,8,0"><TextBlock Text="备份数量" Style="{StaticResource Caption}"/><TextBox x:Name="BackupCountBox" Style="{StaticResource NumericField}"/></StackPanel>
+              <StackPanel Grid.Column="2" Margin="0,0,8,0"><TextBlock Text="短备份间隔（秒）" Style="{StaticResource Caption}"/><TextBox x:Name="ShortBackupIntervalBox" Style="{StaticResource NumericField}"/></StackPanel>
+              <StackPanel Grid.Column="3"><TextBlock Text="长备份间隔（秒）" Style="{StaticResource Caption}"/><TextBox x:Name="LongBackupIntervalBox" Style="{StaticResource NumericField}"/></StackPanel>
+            </Grid>
+          </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Section}">
+          <StackPanel>
+            <TextBlock Text="世界预设与难度" Style="{StaticResource PanelHeader}"/>
+            <TextBlock Text="世界预设（-preset）" Style="{StaticResource Caption}"/>
+            <ComboBox x:Name="WorldPresetBox" Margin="0,3,0,8">
+              <ComboBoxItem Tag="None" Content="默认"/><ComboBoxItem Tag="Normal" Content="普通"/><ComboBoxItem Tag="Casual" Content="休闲"/>
+              <ComboBoxItem Tag="Easy" Content="简单"/><ComboBoxItem Tag="Hard" Content="困难"/><ComboBoxItem Tag="Hardcore" Content="极难"/>
+              <ComboBoxItem Tag="Immersive" Content="沉浸式"/><ComboBoxItem Tag="Hammer" Content="建造模式"/>
+            </ComboBox>
+            <Grid Margin="0,0,0,4">
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0" Margin="0,0,8,0"><TextBlock Text="战斗难度（-modifier combat）" Style="{StaticResource Caption}"/><ComboBox x:Name="CombatModifierBox"><ComboBoxItem Tag="default" Content="默认"/><ComboBoxItem Tag="veryeasy" Content="极易"/><ComboBoxItem Tag="easy" Content="简单"/><ComboBoxItem Tag="hard" Content="困难"/><ComboBoxItem Tag="veryhard" Content="极难"/></ComboBox></StackPanel>
+              <StackPanel Grid.Column="1" Margin="0,0,8,0"><TextBlock Text="死亡惩罚（-modifier deathpenalty）" Style="{StaticResource Caption}"/><ComboBox x:Name="DeathPenaltyModifierBox"><ComboBoxItem Tag="default" Content="默认"/><ComboBoxItem Tag="casual" Content="休闲"/><ComboBoxItem Tag="veryeasy" Content="极易"/><ComboBoxItem Tag="easy" Content="简单"/><ComboBoxItem Tag="hard" Content="困难"/><ComboBoxItem Tag="hardcore" Content="极难"/></ComboBox></StackPanel>
+              <StackPanel Grid.Column="2"><TextBlock Text="资源倍率（-modifier resources）" Style="{StaticResource Caption}"/><ComboBox x:Name="ResourcesModifierBox"><ComboBoxItem Tag="default" Content="默认"/><ComboBoxItem Tag="muchless" Content="大幅减少"/><ComboBoxItem Tag="less" Content="减少"/><ComboBoxItem Tag="more" Content="增加"/><ComboBoxItem Tag="muchmore" Content="大幅增加"/><ComboBoxItem Tag="most" Content="最多"/></ComboBox></StackPanel>
+            </Grid>
+            <Grid Margin="0,0,0,4">
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0" Margin="0,0,8,0"><TextBlock Text="袭击频率（-modifier raids）" Style="{StaticResource Caption}"/><ComboBox x:Name="RaidsModifierBox"><ComboBoxItem Tag="default" Content="默认"/><ComboBoxItem Tag="none" Content="关闭"/><ComboBoxItem Tag="muchless" Content="大幅减少"/><ComboBoxItem Tag="less" Content="减少"/><ComboBoxItem Tag="more" Content="增加"/><ComboBoxItem Tag="muchmore" Content="大幅增加"/></ComboBox></StackPanel>
+              <StackPanel Grid.Column="1" Margin="0,0,8,0"><TextBlock Text="传送门规则（-modifier portals）" Style="{StaticResource Caption}"/><ComboBox x:Name="PortalsModifierBox"><ComboBoxItem Tag="default" Content="默认"/><ComboBoxItem Tag="casual" Content="休闲"/><ComboBoxItem Tag="hard" Content="困难"/><ComboBoxItem Tag="veryhard" Content="极难"/></ComboBox></StackPanel>
+            </Grid>
+          </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Section}">
+          <StackPanel>
+            <TextBlock Text="世界规则（-setkey）" Style="{StaticResource PanelHeader}"/>
+            <CheckBox x:Name="NoBuildCostBox" Content="建造免材料（nobuildcost）"/>
+            <CheckBox x:Name="PlayerEventsBox" Content="玩家事件（playerevents）"/>
+            <CheckBox x:Name="PassiveMobsBox" Content="被动生物（passivemobs）"/>
+            <CheckBox x:Name="NoMapBox" Content="隐藏地图（nomap）"/>
+          </StackPanel>
+        </Border>
+        
+        <Border Style="{StaticResource Section}">
+          <StackPanel>
+            <TextBlock Text="启动命令预览" Style="{StaticResource PanelHeader}"/>
+            <Grid>
+              <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+              <TextBox x:Name="LaunchCommandBox" Grid.Column="0" MinHeight="190" MaxHeight="300" IsReadOnly="True"
+                       AcceptsReturn="True" TextWrapping="Wrap" VerticalContentAlignment="Top"
+                       VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                       Background="{StaticResource SunkenBrush}" Padding="12,10" Margin="0"/>
+              <Button Grid.Column="1" Content="复制命令" Click="CopyCommandClick" VerticalAlignment="Top" Margin="10,0,0,0"/>
+            </Grid>
+          </StackPanel>
+        </Border>
+      </StackPanel>
+    </ScrollViewer>
+    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+      <Button Content="取消" IsCancel="True"/>
+      <Button Content="保存" IsDefault="True" Click="SaveClick" Background="{StaticResource AccentBrush}"/>
+    </StackPanel>
+  </Grid>
+</Window>
