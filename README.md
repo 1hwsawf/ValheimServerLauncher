@@ -1,8 +1,8 @@
-<img width="1166" height="741" alt="image" src="https://github.com/user-attachments/assets/8bca5925-02b6-420b-84cd-35b1794d63c8" />
-<img width="886" height="868" alt="image" src="https://github.com/user-attachments/assets/f70d01ab-daf3-4309-841a-8df444adca81" />
-<img width="886" height="868" alt="image" src="https://github.com/user-attachments/assets/4dc915f9-7608-4512-a1ba-fdb83c632f5f" />
-
-
+<p>
+<img src="https://github.com/user-attachments/assets/8bca5925-02b6-420b-84cd-35b1794d63c8" style="max-width:32%;height:auto;">
+<img src="https://github.com/user-attachments/assets/f70d01ab-daf3-4309-841a-8df444adca81" style="max-width:32%;height:auto;">
+<img src="https://github.com/user-attachments/assets/4dc915f9-7608-4512-a1ba-fdb83c632f5f" style="max-width:32%;height:auto;">
+</p>
 # 英灵神殿服务器启动器
 
 这是基于 `PalworldServerLauncher-1.5.1` 的架构思路重做的 Valheim Windows WPF 启动器。
