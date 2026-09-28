@@ -1,6 +1,6 @@
-<img width="986" height="673" alt="image" src="https://github.com/user-attachments/assets/0808dd9f-373a-428d-abe0-723d54230bc3" />
-<img width="886" height="753" alt="image" src="https://github.com/user-attachments/assets/956f60bd-09ec-4e23-86c4-80608a816246" />
-
+<img width="1166" height="753" alt="image" src="https://github.com/user-attachments/assets/078a17a3-d33b-4661-b393-2d58c5e2ed6c" />
+<img width="886" height="868" alt="image" src="https://github.com/user-attachments/assets/f70d01ab-daf3-4309-841a-8df444adca81" />
+<img width="886" height="868" alt="image" src="https://github.com/user-attachments/assets/4dc915f9-7608-4512-a1ba-fdb83c632f5f" />
 
 
 # 英灵神殿服务器启动器
